@@ -12,9 +12,19 @@
 </h:head>
 <f:view>
     <h:outputLabel value="Hello, JSF"/>
+
     <h:form>
-        <h:commandButton class = "btn" value="login" type="submit"
-                         onclick="showMassage()" action="form.xhtml?faces-redirect=true"/>
+        <h:panelGrid columns="1">
+        <h:inputText id = "username" value="#{user.username}" />
+        <h:outputText id = "outUsername" value="#{user.username}"/>
+            <h:commandButton value="submit">
+                <f:ajax execute="username" render="outUsername"/>
+            </h:commandButton>
+        </h:panelGrid>
+    </h:form>
+
+    <h:form>
+        <h:commandButton class = "btn" value="login"  action="form.xhtml?faces-redirect=true"/>
     </h:form>
 </f:view>
 </html>

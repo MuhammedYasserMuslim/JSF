@@ -2,11 +2,7 @@ package com.java.jsfcourse.bean;
 
 
 import com.java.jsfcourse.model.Student;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.enterprise.context.RequestScoped;
 import jakarta.enterprise.context.SessionScoped;
-
-import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,10 +14,10 @@ import java.util.Date;
 import java.util.List;
 
 @Named
-@RequestScoped // bean destroy after request when make insert in database
-@ViewScoped   // bean destroy after close jsf page
+//@RequestScoped // bean destroy after request when make insert in database
+//@ViewScoped   // bean destroy after close jsf page
 @SessionScoped // bean destroy after session
-@ApplicationScoped // bean destroy after close application
+//@ApplicationScoped // bean destroy after close application
 @Setter
 @Getter
 public class User implements Serializable {
