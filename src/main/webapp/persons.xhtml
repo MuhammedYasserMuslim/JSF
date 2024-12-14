@@ -21,12 +21,12 @@
             <h:outputLabel value="name"/>
             <h:inputText value="#{personBean.person.name}"/>
 
-            <h:commandButton value="submit" action="#{personBean.insert()}"/>
+            <h:commandButton value="Add" action="#{personBean.insert()}"/>
         </h:panelGrid>
     </h:form>
 
    <h:form>
-       <h:dataTable value="#{personBean.persons}" var="per">
+       <h:dataTable value="#{personBean.persons}" var="per" border="1">
            <f:facet name="header">ID</f:facet>
            <h:column> #{per.id}</h:column>
 
@@ -42,12 +42,9 @@
     <h:form>
         <h:inputText value="#{personBean.id}" />
         <h:commandButton value="update" action="#{personBean.findById(personBean.id)}"/>
-    </h:form>
-
-    <h:form>
-        <h:inputText value="#{personBean.id}" />
         <h:commandButton value="delete" action="#{personBean.deleteById(personBean.id)}"/>
     </h:form>
+
 
 </f:view>
 </html>
