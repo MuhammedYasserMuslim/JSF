@@ -15,7 +15,9 @@
 
     <h:form>
         <h:panelGrid columns="1">
-        <h:inputText id = "username" value="#{user.username}" />
+        <h:inputText id = "username" value="#{user.username}">
+            <f:ajax execute="username" render="outUsername" event="keyup"/>
+        </h:inputText>
         <h:outputText id = "outUsername" value="#{user.username}"/>
             <h:commandButton value="submit">
                 <f:ajax execute="username" render="outUsername"/>

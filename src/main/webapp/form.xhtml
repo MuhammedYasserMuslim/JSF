@@ -8,7 +8,6 @@
 <h:head>
     <title>JSF</title>
     <h:outputStylesheet library="css" name="style.css"/>
-
 </h:head>
 <f:view>
     <h:form>
@@ -18,31 +17,24 @@
                 <f:validateLength maximum="10" minimum="3"/>
             </h:inputText>
 
-
             <h:outputText value=" password : "/>
             <h:inputSecret value="#{user.password}"/>
-
 
             <h:outputText value=" age : "/>
             <h:inputText id="age" value="#{user.age}">
                 <f:validateLongRange maximum="60" minimum="18" />
             </h:inputText>
 
-
             <h:outputText value=" date : "/>
             <h:inputText value="#{user.date}" id="date">
                 <f:convertDateTime pattern="dd-mm-yyyy"/>
             </h:inputText>
 
-
-
             <h:outputText value=" massage : "/>
             <h:inputTextarea value="#{user.massage}"/>
 
-
             <h:outputText value=" Reminder Me : "/>
             <h:selectBooleanCheckbox value="#{user.reminder}"/>
-
 
             <h:outputText value=" Programmig Languages : "/>
             <h:selectManyCheckbox value="#{user.languages}">
@@ -50,7 +42,6 @@
                 <f:selectItem itemLabel="C#" itemValue="C#"/>
                 <f:selectItem itemLabel="C++" itemValue="C++"/>
             </h:selectManyCheckbox>
-
 
             <h:outputText value=" Department : "/>
             <h:selectOneRadio value="#{user.department}">
@@ -60,14 +51,12 @@
                 <f:selectItem itemLabel="DS" itemValue="DS"/>
             </h:selectOneRadio>
 
-
             <h:outputText value=" Skills : "/>
             <h:selectManyListbox value="#{user.skills}">
                 <f:selectItem itemLabel="OOP" itemValue="OOP"/>
                 <f:selectItem itemLabel="Data Structue" itemValue="Data Structue"/>
                 <f:selectItem itemLabel="Algorithm" itemValue="Algorithm"/>
             </h:selectManyListbox>
-
 
             <h:outputText value=" Country : "/>
             <h:selectOneListbox value="#{user.country}">
@@ -77,13 +66,11 @@
                 <f:selectItem itemLabel="Barazil" itemValue="BR"/>
             </h:selectOneListbox>
 
-
             <h:outputText value=" Gender : "/>
             <h:selectOneMenu value="#{user.gender}">
                 <f:selectItem itemLabel="MALE" itemValue="MALE"/>
                 <f:selectItem itemLabel="FEMALE" itemValue="FEMALE"/>
             </h:selectOneMenu>
-
 
             <h:commandButton value="login" action="formresult.xhtml?faces-redirect=true"/>
             <h:commandLink value="login" action="formresult.xhtml?faces-redirect=true"/>
