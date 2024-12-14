@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>JSF</title>
+</h:head>
+<f:view>
+
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:outputLabel value="username"/>
+            <h:inputText value="#{personBean.person.username}"/>
+
+            <h:outputLabel value="password"/>
+            <h:inputText value="#{personBean.person.password}"/>
+
+            <h:outputLabel value="name"/>
+            <h:inputText value="#{personBean.person.name}"/>
+
+            <h:commandButton value="submit" action="#{personBean.insert()}"/>
+        </h:panelGrid>
+    </h:form>
+
+   <h:form>
+       <h:dataTable value="#{personBean.persons}" var="per">
+           <f:facet name="header">ID</f:facet>
+           <h:column> #{per.id}</h:column>
+
+           <f:facet name="header">username</f:facet>
+           <h:column> #{per.username}</h:column>
+
+           <f:facet name="header">name</f:facet>
+           <h:column> #{per.name}</h:column>
+       </h:dataTable>
+       <h:commandButton value="show" action="#{personBean.findAll()}"/>
+   </h:form>
+
+    <h:form>
+        <h:inputText value="#{personBean.id}" />
+        <h:commandButton value="update" action="#{personBean.findById(personBean.id)}"/>
+    </h:form>
+
+    <h:form>
+        <h:inputText value="#{personBean.id}" />
+        <h:commandButton value="delete" action="#{personBean.deleteById(personBean.id)}"/>
+    </h:form>
+
+</f:view>
+</html>

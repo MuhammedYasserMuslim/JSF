@@ -19,7 +19,7 @@
             <f:ajax execute="username" render="outUsername" event="keyup"/>
         </h:inputText>
         <h:outputText id = "outUsername" value="#{user.username}"/>
-            <h:commandButton value="submit">
+            <h:commandButton value="submit" action="persons.xhtml?faces-redirect=true">
                 <f:ajax execute="username" render="outUsername"/>
             </h:commandButton>
         </h:panelGrid>
